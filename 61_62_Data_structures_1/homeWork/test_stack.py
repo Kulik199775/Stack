@@ -152,5 +152,11 @@ class TestStack:
         assert stack.is_empty() is True
 
 if __name__ == '__main__':
-    pytest.main([__file__, '-v'])
+    pytest.main([
+        __file__,
+        '-v',
+        '--cov=stack',
+        '--cov-report=term-missing',
+        '--cov-report=html'
+    ])
 

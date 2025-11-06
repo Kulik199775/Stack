@@ -86,3 +86,22 @@ class TestStack:
         assert stack.is_full() is False
         stack.push(2)
         assert stack.is_full() is True
+
+    def test_clear_stack(self):
+        """Тест очистки стека"""
+        stack = Stack()
+        stack.push(1)
+        stack.push(2)
+        stack.clear_stack()
+        assert stack.is_empty() is True
+        assert stack.top is None
+
+    def test_get_data(self):
+        """Тест получения данных по индексу"""
+        stack = Stack()
+        stack.push(1)
+        stack.push(2)
+        stack.push(3)
+        assert stack.get_data(0) == 3 #Вершина
+        assert stack.get_data(1) == 2
+        assert stack.get_data(2) == 1

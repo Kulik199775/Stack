@@ -120,3 +120,22 @@ class TestStack:
         assert stack.size_stack() == 1
         stack.push(2)
         assert stack.size_stack() == 2
+
+    def test_counter_int(self):
+        """Тест подсчета целых чисел в стеке"""
+        stack = Stack()
+        stack.push(1)
+        stack.push('string')
+        stack.push(2.5)
+        stack.push(3)
+        stack.push([1, 2, 3])
+        assert stack.counter_int() == 2
+
+    def test_counter_int_no_integer(self):
+        """Тест подсчета целых чисел когда их нет в стеке"""
+        stack = Stack()
+        stack.push('string')
+        stack.push(2.5)
+        stack.push([1, 2, 3])
+        assert stack.counter_int() == 0
+

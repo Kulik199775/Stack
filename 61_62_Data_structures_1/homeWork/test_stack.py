@@ -1,4 +1,5 @@
 import pytest
+from stack import Node, Stack
 
 
 class TestNode:

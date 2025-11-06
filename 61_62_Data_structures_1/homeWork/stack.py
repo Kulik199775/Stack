@@ -69,7 +69,7 @@ class Stack:
             self.top = self.top.next_node
             return remove_last.data
         else:
-            return "Стэк пуст"
+            return "Стек пуст"
 
     def is_empty(self):
         """

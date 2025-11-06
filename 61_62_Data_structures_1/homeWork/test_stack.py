@@ -26,3 +26,16 @@ class TestStack:
         assert stack.stack_size == 5
         assert stack.top is None
         assert stack.is_empty() is True
+
+    def test_stack_creation_custom_size(self):
+        """Тест создания стека с пользовательским размером."""
+        stack = Stack(stack_size=10)
+        assert stack.stack_size == 10
+        assert stack.top is None
+
+    def test_push(self):
+        """Тест добавления элемента в стек."""
+        stack = Stack()
+        stack.push(1)
+        assert stack.top.data == 1
+        assert stack.size_stack() == 1

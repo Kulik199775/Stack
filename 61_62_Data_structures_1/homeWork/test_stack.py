@@ -71,3 +71,18 @@ class TestStack:
         stack = Stack()
         result = stack.pop()
         assert result == 'Стек пуст'
+
+    def test_is_empty(self):
+        """Тест проверки пустого стека"""
+        stack = Stack()
+        assert stack.is_empty() is True
+        stack.push(1)
+        assert stack.is_empty() is False
+
+    def test_is_full(self):
+        stack = Stack(stack_size=2)
+        assert stack.is_full() is False
+        stack.push(1)
+        assert stack.is_full() is False
+        stack.push(2)
+        assert stack.is_full() is True

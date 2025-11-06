@@ -39,3 +39,21 @@ class TestStack:
         stack.push(1)
         assert stack.top.data == 1
         assert stack.size_stack() == 1
+
+    def test_push_multiple(self):
+        """Тест добавления нескольких элементов в стек."""
+        stack = Stack(stack_size=3)
+        stack.push(1)
+        stack.push(2)
+        stack.push(3)
+        assert stack.top.data == 3
+        assert stack.size_stack() == 3
+
+    def test_push_full_stack(self):
+        """Тест добавления в заполненный стек."""
+        stack = Stack(stack_size=2)
+        stack.push(1)
+        stack.push(2)
+        result = stack.push(3)  # Попытка добавить в заполненный стек
+        assert result == "Стэк переполнен"
+        assert stack.size_stack() == 2

@@ -105,3 +105,18 @@ class TestStack:
         assert stack.get_data(0) == 3 #Вершина
         assert stack.get_data(1) == 2
         assert stack.get_data(2) == 1
+
+    def test_get_data_out_of_range(self):
+        """Тест получения данных по несуществующему индексу"""
+        stack = Stack()
+        stack.push(1)
+        assert stack.get_data(5) == 'Out of range'
+
+    def test_size_stack(self):
+        """Тест получения размера стека"""
+        stack = Stack()
+        assert stack.size_stack() == 0
+        stack.push(1)
+        assert stack.size_stack() == 1
+        stack.push(2)
+        assert stack.size_stack() == 2

@@ -57,3 +57,17 @@ class TestStack:
         result = stack.push(3)  # Попытка добавить в заполненный стек
         assert result == "Стэк переполнен"
         assert stack.size_stack() == 2
+
+    def test_pop(self):
+        """ Тест извлечения элемента из стека"""
+        stack = Stack()
+        stack.push(1)
+        stack.push(2)
+        assert stack.pop() == 2
+        assert stack.pop() == 1
+
+    def test_pop_empty(self):
+        """Тест извлечения из пустого стека."""
+        stack = Stack()
+        result = stack.pop()
+        assert result == 'Стек пуст'

@@ -139,3 +139,17 @@ class TestStack:
         stack.push([1, 2, 3])
         assert stack.counter_int() == 0
 
+    def test_lifo_behavior(self):
+        """Тест поведения LIFO"""
+        stack = Stack(stack_size=3)
+        stack.push(1)
+        stack.push(2)
+        stack.push(3)
+        assert stack.pop() == 3
+        assert stack.pop() == 2
+        assert stack.pop() == 1
+        assert stack.is_empty() is True
+
+if __name__ == '__main__':
+    pytest.main([__file__, '-v'])
+
